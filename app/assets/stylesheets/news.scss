@@ -1,0 +1,25 @@
+.index_news_btns {
+  color: $turquoise;
+  padding: 5px 20px;
+}
+
+.span_news {
+  padding-top: 15px;
+  float: right;
+}
+
+.news_description {
+  overflow: hidden;
+  width: 100%;
+  height: 100px;
+  display: -webkit-box;
+}
+
+.paginate {
+  margin: 30px 0;
+}
+
+.create_news_btn {
+  margin-left: 15px;
+  color: $color-white;
+}

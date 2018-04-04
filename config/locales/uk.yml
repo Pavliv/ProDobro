@@ -64,6 +64,43 @@ uk:
         restrict_dependent_destroy:
           has_one: 'Неможливо видалити запис, так як існує залежність: %{record}'
           has_many: 'Неможливо видалити запис, так як існують залежності: %{record}'
+  news: 
+    index:
+      create_news: Створити новину
+      edit: Змінити
+      delete: Видалити
+      are_you_sure?: Ви впевнені?
+    show:
+      posted_at: Опубліковано
+      description: Опис
+    edit:
+      edit_news: Редагувати новину
+      title: Заголовок
+      description: Опис
+      edit: Змінити
+      back: Назад
+    update:
+      news_updated: Новину відредаговано
+      news_notupdated: Новину не відредаговано
+    create:
+      news_created: Новину створено
+      news_notcreated: Новину не створено
+    destroy:
+      news_deleted: Новину видалено
+      news_notdeleted: Новину не видалено
+    new:
+      create_news: Створити новину
+      title: Заголовок
+      description: Опис
+      create: Створити
+      back: Назад
+  views:
+    pagination:
+      first: "&laquo; Перша"
+      last: "Ост &raquo;"
+      next: "Наст &rsaquo;"
+      previous: "&lsaquo; Попер"
+      truncate: "&hellip;"
   date:
     abbr_day_names:
     - нд.
@@ -75,18 +112,18 @@ uk:
     - сб.
     abbr_month_names:
     -
-    - січ.
-    - лют.
-    - бер.
-    - квіт.
-    - трав.
-    - черв.
-    - лип.
-    - серп.
-    - вер.
-    - жовт.
-    - лист.
-    - груд.
+    - Січ
+    - Лют
+    - Бер
+    - Квт
+    - Трв
+    - Чрв
+    - Лип
+    - Сер
+    - Вер
+    - Жов
+    - Лист
+    - Груд
     day_names:
     - неділя
     - понеділок
@@ -97,8 +134,8 @@ uk:
     - субота
     formats:
       default: "%d.%m.%Y"
-      long: "%d %B %Y"
-      short: "%d %b"
+      long: "%B %d, %Y"
+      short: "%b %d"
     month_names:
     -
     - Січня
@@ -319,5 +356,5 @@ uk:
     formats:
       default: "%a, %d %b %Y, %H:%M:%S %z"
       long: "%d %B %Y, %H:%M"
-      short: "%d %b, %H:%M"
+      short: "%d %b, %Y"
     pm: по полудні

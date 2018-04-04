@@ -1,0 +1,16 @@
+.container.block
+  = link_to t('.create_news'), new_news_path, class: 'btn btn-success create_news_btn'
+  .row
+    - @news.each do |news|
+      .col-md-4.container-item
+        = image_tag 'lights.jpg', class: 'img img-rounded image', alt: 'news photo'
+        %div
+          .title-block
+            %h3.title= link_to news.title, news_path(news)
+          .body
+            %span.news_description= news.description
+            = link_to t('.edit'), edit_news_path(news), class: 'btn btn-outline-info index_news_btns'
+            = link_to t('.delete'), news, method: :delete, data: { confirm: t('.are_you_sure?') }, class: 'btn btn-outline-info index_news_btns'
+            %span.span_news= l news.created_at, format: :short
+.paginate
+  = paginate @news

@@ -1,0 +1,11 @@
+.container
+  %h1= @news.title
+  %hr
+  %span= t('.posted_at')
+  %span= l @news.created_at, format: :long
+  %hr
+  = image_tag 'lights.jpg', class: 'img img-fluid', alt: 'news photo'
+  %hr
+  %p
+  %h2= t('.description')
+  %p= @news.description
