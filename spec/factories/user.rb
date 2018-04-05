@@ -5,5 +5,6 @@ FactoryBot.define do
     phone_number Faker::Base.numerify('+380#########')
     email Faker::Internet.email
     password '369852'
+    password_confirmation '369852'
   end
 end
