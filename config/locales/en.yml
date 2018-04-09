@@ -1,5 +1,23 @@
 ---
 en:
+  layouts: 
+    application:
+      title: ProDobro
+      edit_profile: Edit Profile
+      show_profile: Show Profile
+      logout: Logout
+      sign_up: Sign Up
+      login: login
+      news: NEWS
+      about_us: ABOUT US
+      campaigns: CAMPAIGNS
+      contacts: CONTACTS
+      links: LINKS
+      address: ADDRESS
+      our_goal: OUR GOAL
+      goal: The only limit to the height of your achievements is the reach of your dreams and your willingness to work for them
+      something: SOME CAMPAIGNS
+      current_address: LVIV, LV 79000
   activerecord:
     errors:
       messages:

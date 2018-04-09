@@ -1,3 +1,88 @@
 @import "bootstrap";
 @import "variables";
 @import "users";
+
+section .no-gutters {
+  margin-top: 80px;
+}
+
+.lang {
+  padding-right: 10px;
+  margin-bottom: 0px;
+}
+
+.d-inline {
+  a {
+    font-size: 12px;
+    color: $color-white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $color-blue;
+  }
+}
+
+.pipe {
+  color: $color-white;
+}
+
+.navbar-dark .navbar-nav .active>.nav-link:hover {
+  color: $color-blue;
+}
+
+#navbarDropdown:hover {
+  color: $color-blue;
+}
+
+.dropdown-menu a:hover {
+  background-color: $color-blue;
+}
+
+.row {
+  margin: 0;
+}
+
+a.nav-link {
+  padding-bottom: 0;
+}
+
+div.row.justify-content-between {
+  padding: 0 5px 15px 5px;
+}
+
+section {
+  margin-top: 10%;
+}
+
+.page-footer {
+  color: $color-white;
+}
+
+.list-unstyled p {
+  a {
+    color: $color-white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $color-blue;
+  }
+}
+
+.foot {
+  padding-top: 5%;
+}
+
+.page-footer h5 {
+  color: #9ea3aa;
+}
+
+.footer-copyright {
+  a {
+    color: $color-white;
+    text-decoration: none;
+  }
+  a:hover {
+    color: $color-blue;
+    text-decoration: none;
+  }
+}

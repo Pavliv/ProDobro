@@ -1,0 +1,93 @@
+!!!
+%html
+  %head
+    %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %title= t(".title")
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+    = favicon_link_tag 'hand.png'
+    %link{href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css", rel: "stylesheet"}
+  %body
+    %nav.navbar-expand-lg.navbar-dark.bg-dark.fixed-top
+      .container
+        .row.justify-content-end
+          %ul.lang
+            %li.d-inline
+              - if user_signed_in?
+                %span
+                  Logged in as
+                  %strong= current_user.email
+                = link_to t(".edit_profile"), edit_user_registration_path, class: "btn"
+                = link_to t(".show_profile"), user_path(current_user), class: "btn"
+                = link_to t(".logout"), destroy_user_session_path, method: :delete, class: "btn"
+              - else
+                = link_to t(".sign_up"), new_user_registration_path, class: "btn"
+                %span.pipe|
+                = link_to t(".login"), new_user_session_path, class: "btn"
+            %li.d-inline
+              %a= link_to 'EN', url_for(locale: :en)
+            %span.pipe|
+            %li.d-inline
+              %a= link_to 'UA', url_for(locale: :uk)
+        .row.justify-content-between
+          %a.navbar-brand{href: "#"}
+            = image_tag("prodobro2.png", alt: "ProDobro")
+          %button.navbar-toggler{"aria-controls" => "navbarSupportedContent", "aria-expanded" => "false", "aria-label" => "Toggle navigation", "data-target" => "#navbarSupportedContent", "data-toggle" => "collapse", type: "button"}
+            %span.navbar-toggler-icon
+          #navbarSupportedContent.collapse.navbar-collapse
+            %ul.navbar-nav.ml-auto
+              %li.nav-item.active
+                %a.nav-link{href: "#"}= t(".news")
+              %li.nav-item.active
+                %a.nav-link{href: "#"}= t(".about_us")
+              %li.nav-item.dropdown
+                %a#navbarDropdown.nav-link.dropdown-toggle.active{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button"}
+                  = t(".campaigns")
+                .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
+                  %a.dropdown-item{href: "#"}= t(".something")
+                  %a.dropdown-item{href: "#"}= t(".something")
+                  %a.dropdown-item{href: "#"}= t(".something")
+              %li.nav-item.active
+                %a.nav-link{href: "#"}= t(".contacts")
+    %section.no-gutters
+      .container
+        = yield
+    %footer.page-footer.font-small.bg-dark
+      .container.text-center.text-md-left
+        .foot.row.no-gutters.my-4
+          .col-md-4.col-lg-3
+            %h5.text-uppercase.mb-4.font-weight-bold= t(".our_goal")
+            %p= t(".goal")
+          %hr.clearfix.w-100.d-md-none
+          .col-md-2.col-lg-2.ml-auto
+            %h5.text-uppercase.mb-4.font-weight-bold= t(".links")
+            %ul.list-unstyled
+              %p
+                %a{href: "#!"}= t(".news")
+              %p
+                %a{href: "#!"}= t(".about_us")
+              %p
+                %a{href: "#!"}= t(".campaigns")
+              %p
+                %a{href: "#!"}= t(".contacts")
+          %hr.clearfix.w-100.d-md-none
+          .col-md-4.col-lg-3
+            %h5.text-uppercase.mb-4.font-weight-bold= t(".address")
+            %p
+              %i.fa.fa-home.mr-3
+              = t(".current_address")
+            %p
+              %i.fa.fa-envelope.mr-3
+              info@prodobro.com
+            %p
+              %i.fa.fa-phone.mr-3
+              + 01 234 567 88
+            %p
+              %i.fa.fa-print.mr-3
+              + 01 234 567 89
+      %hr
+      .footer-copyright.py-3.text-center
+        = Date.today.year
+        © Copyright:
+        %a{href: "#"} ProDobro.com
