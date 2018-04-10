@@ -1,0 +1,13 @@
+class Campaign < ApplicationRecord
+  belongs_to :user
+  validates :title, presence: true,
+                    uniqueness: true,
+                    length: { minimum: 3 }
+  validates :description, presence: true
+  validates :current_amount, :needed_amount, presence: true,
+                                             numericality: { greater_than_or_equal_to: 0 }
+  validates :requisite, presence: true,
+                        numericality: true,
+                        length: { is: 16 },
+                        format: { with: /\A\d+\z/ }
+end
