@@ -1,10 +1,9 @@
-%div(style='margin: auto; width: 600px; border: 1px solid grey; border-radius: 5px; padding: 20px; text-align: center')
-  %div(style='display: block; margin-left: auto; margin-right: auto')
-    = image_tag 'prodobro1.png', style: 'width: 100px'
-  %div(style='background-color: #335b66; padding: 20px')
-    = image_tag 'ok.png', style: 'width: 50px; display: block; margin-left: auto; margin-right: auto'
-    %h2(style='color: white')= t('.title')
-  %p(style='font-weight: bold; margin-top: 40px')= t('.greeting', recipient: @email)
+.wrapper
+  = image_tag 'prodobro1.png', class: 'logo'
+  .header
+    = image_tag 'ok.png', class: 'icon'
+    %h2.title= t('.title')
+  %p.greeting= t('.greeting', recipient: @email)
   %p= t('.instruction')
-  %button(style='background-color: #9edce5; padding: 15px; border: none; border-radius: 5px; margin: 15px')
-    = link_to t('.action'), confirmation_url(@resource, confirmation_token: @token), style: 'color: black; text-decoration: none'
+  %button
+    = link_to t('.action'), confirmation_url(@resource, confirmation_token: @token), class: 'link'
