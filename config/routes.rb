@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users
+  scope '(:locale)', locale: /en|uk/ do
+    devise_for :users
+  end
 end
