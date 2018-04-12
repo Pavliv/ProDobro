@@ -13,6 +13,7 @@ Metrics/BlockLength:
   Exclude:
     - 'spec/**/*'
     - 'db/migrate/*'
+    - 'config/environments/*'
 Metrics/AbcSize:
   Exclude:
     - 'db/migrate/*'

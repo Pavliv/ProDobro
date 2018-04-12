@@ -1,0 +1,17 @@
+a {
+  color: $turquoise;
+  &:hover {
+    text-decoration: none;
+    color: $turquoise;
+    font-weight: bold;
+  }
+}
+
+.btn-outline-info {
+  padding: 5px 30px;
+  margin-bottom: 10px;
+}
+
+.header {
+  margin: 25px 0;
+}

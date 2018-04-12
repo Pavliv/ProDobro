@@ -1,0 +1,9 @@
+.wrapper
+  = image_tag 'prodobro1.png', class: 'logo'
+  .header
+    = image_tag 'ok.png', class: 'icon'
+    %h2.title= t('.title')
+  %p.greeting= t('.greeting', recipient: @email)
+  %p= t('.instruction')
+  %button
+    = link_to t('.action'), confirmation_url(@resource, confirmation_token: @token), class: 'link'
