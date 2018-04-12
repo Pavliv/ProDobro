@@ -1,5 +1,23 @@
 ---
 uk:
+  layouts: 
+    application:
+      title: ПроДобро
+      edit_profile: Редагувати профіль
+      show_profile: Показати профіль
+      logout: Вихід
+      sign_up: Реєстрація
+      login: Вхід
+      news: НОВИНИ
+      about_us: ПРО НАС
+      campaigns: КАМПАНІЇ
+      contacts: КОНТАКТИ
+      links: ЛІНКИ
+      address: АДРЕСА
+      our_goal: НАША ЦІЛЬ
+      goal: Єдиним обмеженням до висоти ваших досягнень є досягнення ваших мрій та бажання працювати на них
+      something: ЯКАСЬ КАМПАНІЯ
+      current_address: ЛЬВІВ, 79000
   activerecord:
     errors:
       messages:
