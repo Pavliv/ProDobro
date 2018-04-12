@@ -9,22 +9,20 @@
           %br
           = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
         .form-group
-          = f.label :name
+          = f.label :name, t(".name")
           %br
           = f.text_field :name, class: "form-control"
         .form-group
-          = f.label :surname
+          = f.label :surname, t(".surname")
           %br
           = f.text_field :surname, class: "form-control"
         .form-group
-          = f.label :phone_number
+          = f.label :phone_number, t(".phone_number")
           %br
           = f.text_field :phone_number, class: "form-control"
         .form-group
           = f.label :password
-          - if @minimum_password_length
-            %em
-              = t("#{@minimum_password_length} characters minimum")
+          %em= t('devise.shared.minimum_password_length', count: @minimum_password_length)
           %br
           = f.password_field :password, autocomplete: "off", class: "form-control"
         .form-group
