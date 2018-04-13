@@ -2,6 +2,7 @@
 %html
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}
     %title= t(".title")
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
@@ -13,7 +14,7 @@
       .container
         .row.justify-content-end
           %ul.lang
-            %li.d-inline
+            %li.d-inline.registration
               - if user_signed_in?
                 %span
                   Logged in as

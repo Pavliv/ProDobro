@@ -2,8 +2,8 @@
 @import "variables";
 @import "users";
 
-section .no-gutters {
-  margin-top: 80px;
+section {
+  margin-top: 110px;
 }
 
 .lang {
@@ -20,6 +20,14 @@ section .no-gutters {
   a:hover {
     color: $color-blue;
   }
+}
+
+.registration {
+  padding-right: 30px;
+}
+
+a.btn {
+  padding:0;
 }
 
 .pipe {
@@ -48,10 +56,6 @@ a.nav-link {
 
 div.row.justify-content-between {
   padding: 0 5px 15px 5px;
-}
-
-section {
-  margin-top: 10%;
 }
 
 .page-footer {
