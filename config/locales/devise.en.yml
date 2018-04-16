@@ -15,13 +15,16 @@ en:
         last_sign_in_at: Last sign in at
         last_sign_in_ip: Last sign in IP
         locked_at: Locked at
+        name: Name
         password: Password
         password_confirmation: Password confirmation
+        phone_number: Phone number
         remember_created_at: Remember created at
         remember_me: Remember me
         reset_password_sent_at: Reset password sent at
         reset_password_token: Reset password token
         sign_in_count: Sign in count
+        surname: Surname
         unconfirmed_email: Unconfirmed email
         unlock_token: Unlock token
         updated_at: Updated at
