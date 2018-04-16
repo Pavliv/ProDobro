@@ -7,6 +7,8 @@ AllCops:
     - 'bin/**/*'
     - 'vendor/**/*'
     - 'db/schema.rb'
+    - 'config/initializers/simple_form.rb'
+    - 'config/initializers/simple_form_bootstrap.rb'
 Metrics/LineLength:
   Max: 100
 Metrics/BlockLength:
