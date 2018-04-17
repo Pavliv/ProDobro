@@ -94,4 +94,8 @@ RSpec.describe(User, type: :model) do
       expect(user.errors.messages[:phone_number]).to eq ['is not a number']
     end
   end
+
+  context 'when user create many news' do
+    it { is_expected.to have_many(:news) }
+  end
 end
