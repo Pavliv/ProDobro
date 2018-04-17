@@ -1,13 +1,10 @@
 .container
   .row.justify-content-center
-    .col-md-4
+    .col-lg-5.col-md-6
       %h2.text-center.header= t('.resend_confirmation_instructions')
-      = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
-        = devise_error_messages!
+      = simple_form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
         .form-group
-          = f.label :email 
-          %br
-          = f.email_field :email, autofocus: true, autocomplete: 'email', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: 'form-control'
+          = f.input :email, autofocus: true, autocomplete: 'email', value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), input_html: { class: 'form-control' }
         .actions
-          = f.submit t('.resend_confirmation_instructions') , class: 'btn btn-outline-info'
+          = f.submit t('.resend_confirmation_instructions') , class: 'btn btn-outline-info btn-size'
       = render 'devise/shared/links'

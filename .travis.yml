@@ -11,3 +11,4 @@ before_script:
 script:
   - bundle exec rubocop -d
   - bundle exec rspec
+  - bundle exec rake jshint

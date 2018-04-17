@@ -1,4 +1,4 @@
-a {
+.link {
   color: $grey-dark;
   &:hover {
     text-decoration: none;
@@ -6,11 +6,15 @@ a {
   }
 }
 
-.btn-outline-info {
+.btn-size {
   padding: 5px 30px;
   margin-bottom: 10px;
 }
 
 .header {
   margin: 25px 0;
+}
+
+abbr[title] {
+  text-decoration: none;
 }

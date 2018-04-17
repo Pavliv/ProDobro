@@ -31,6 +31,11 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  config.action_controller.asset_host = ENV['HOST_NAME']
+  config.action_mailer.asset_host = ENV['HOST_NAME']
+
+  config.serve_static_files = true
+
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.perform_deliveries = true
 
