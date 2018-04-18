@@ -33,6 +33,9 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.7.0'
   gem 'rubocop-ci', git: 'https://github.com/ad2games/rubocop-ci'
   gem 'selenium-webdriver', '~> 3.11.0'
+end
+
+group :test do
   gem 'shoulda-matchers', '~> 3.1'
 end
 
