@@ -17,10 +17,6 @@
           %br
           = f.text_field :surname, class: "form-control"
         .form-group
-          = f.label :phone_number, t(".phone_number")
-          %br
-          = f.text_field :phone_number, class: "form-control"
-        .form-group
           = f.label :password
           %em= t('devise.shared.minimum_password_length', count: @minimum_password_length)
           %br
