@@ -1,20 +1,15 @@
 .container
   .row.justify-content-center
-    .col-md-4
+    .col-lg-5.col-md-6
       %h2.text-center.header= t('.change_your_password')
-      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
-        = devise_error_messages!
+      = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, novalidate: false }) do |f|
         = f.hidden_field :reset_password_token
         .form-group
           = f.label :password, t('.new_password')
-          - if @minimum_password_length
-            %em= t('devise.shared.minimum_password_length', count: @minimum_password_length)
-            %br
-          = f.password_field :password, autofocus: true, autocomplete: "off", class: "form-control"
+          %em= t('devise.shared.minimum_password_length', count: @minimum_password_length)
+          = f.input :password, autofocus: true, autocomplete: 'off', input_html: { class: 'form-control', id: 'password1', minlength: 6 }, label: false
         .form-group
-          = f.label :password_confirmation, t('.confirm_new_password')
-          %br
-          = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+          = f.input :password_confirmation, label: t('.confirm_new_password'), autocomplete: 'off', input_html: { class: 'form-control', id: 'password2' }
         .actions
-          = f.submit t('.change_my_password'), class: "btn btn-outline-info"
-      = render "devise/shared/links"
+          = f.submit t('.change_my_password'), class: 'btn btn-outline-info btn-size'
+      = render 'devise/shared/links'

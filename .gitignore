@@ -3,3 +3,4 @@ config/database.yml
 /tmp
 /.bundle
 .env
+public/assets

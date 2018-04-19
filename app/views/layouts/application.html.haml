@@ -53,6 +53,10 @@
                 %a.nav-link{href: "#"}= t(".contacts")
     %section.no-gutters
       .container
+        - flash.each do |message_type, message|
+          .alert.alert-info
+            %button.close{'data-dismiss' => 'alert', type: 'button'} ×
+            #{message}
         = yield
     %footer.page-footer.font-small.bg-dark
       .container.text-center.text-md-left

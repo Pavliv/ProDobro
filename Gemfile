@@ -29,6 +29,7 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'factory_bot_rails'
   gem 'faker', '1.8.7'
+  gem 'jshint'
   gem 'mysql2', '>= 0.3.18', '< 0.5'
   gem 'puma', '~> 3.7'
   gem 'rspec-rails', '~> 3.7.0'
