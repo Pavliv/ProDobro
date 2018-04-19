@@ -18,7 +18,6 @@ uk:
         name: "Ім'я"
         password: "Пароль"
         password_confirmation: "Підтвердження пароля"
-        phone_number: "Номер телефону"
         remember_created_at: Remember created at
         remember_me: "Запам'ятати мене"
         reset_password_sent_at: "Оновлений пароль в"

@@ -18,7 +18,6 @@ en:
         name: Name
         password: Password
         password_confirmation: Password confirmation
-        phone_number: Phone number
         remember_created_at: Remember created at
         remember_me: Remember me
         reset_password_sent_at: Reset password sent at
