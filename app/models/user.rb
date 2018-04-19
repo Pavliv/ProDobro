@@ -1,4 +1,5 @@
 class User < ApplicationRecord
+  rolify
   has_many :news
   has_many :campaigns
   devise :database_authenticatable, :registerable, :confirmable,
