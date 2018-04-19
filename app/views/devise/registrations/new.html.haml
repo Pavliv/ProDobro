@@ -1,30 +1,20 @@
 .container
   .row.justify-content-center
-    .col-md-4
-      %h2.header= t(".sign_up")
-      = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
-        = devise_error_messages!
+    .col-lg-5.col-md-6
+      %h2.header= t('.sign_up')
+      = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { novalidate: false }) do |f|
         .form-group
-          = f.label :email
-          %br
-          = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control"
+          = f.input :email, label: 'Email', autofocus: true, autocomplete: 'email', input_html: { class: 'form-control' }, placeholder: 'example@mail.com', required: true
         .form-group
-          = f.label :name, t(".name")
-          %br
-          = f.text_field :name, class: "form-control"
+          = f.input :name, label: t('.name'), input_html: { class: 'form-control', minlength: 3, maxlength: 30 }
         .form-group
-          = f.label :surname, t(".surname")
-          %br
-          = f.text_field :surname, class: "form-control"
+          = f.input :surname, label: t('.surname'), input_html: { class: 'form-control', minlength: 3, maxlength: 30 }
         .form-group
-          = f.label :password
+          = f.label :password, required: true
           %em= t('devise.shared.minimum_password_length', count: @minimum_password_length)
-          %br
-          = f.password_field :password, autocomplete: "off", class: "form-control"
+          = f.input :password, autocomplete: 'off', input_html: { id: 'password1', class: 'form-control', minlength: 6 }, label: false
         .form-group
-          = f.label :password_confirmation
-          %br
-          = f.password_field :password_confirmation, autocomplete: "off", class: "form-control"
+          = f.input :password_confirmation, autocomplete: 'off',  input_html: { id: 'password2', class: 'form-control' }, required: true
         .actions
-          = f.submit t(".sign_up"), class: "btn btn-outline-info"
-      = render "devise/shared/links"
+          = f.submit t('.sign_up'), class: 'btn btn-outline-info btn-size'
+      = render 'devise/shared/links'

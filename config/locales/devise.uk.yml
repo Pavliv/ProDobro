@@ -14,7 +14,8 @@ uk:
         failed_attempts: "Невдалих спроб"
         last_sign_in_at: "Останній візит"
         last_sign_in_ip: "Останній ІР"
-        locked_at: "Заблоковано в" 
+        locked_at: "Заблоковано в"
+        name: "Ім'я"
         password: "Пароль"
         password_confirmation: "Підтвердження пароля"
         remember_created_at: Remember created at
@@ -22,6 +23,7 @@ uk:
         reset_password_sent_at: "Оновлений пароль в"
         reset_password_token: "Посилання на скидання пароля"
         sign_in_count: "Кількість вході"
+        surname: "Прізвище"
         unconfirmed_email: "Не підтвердженна електронна почта"
         unlock_token: "Токен розблокування"
         updated_at: "Оновлений в"
