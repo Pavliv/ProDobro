@@ -10,4 +10,8 @@ RSpec.describe(News, type: :model) do
 
     it { is_expected.to belong_to(:user) }
   end
+
+  context 'when user created comment to news' do
+    it { is_expected.to have_many(:comments) }
+  end
 end
