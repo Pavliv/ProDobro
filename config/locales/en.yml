@@ -16,8 +16,47 @@ en:
       address: ADDRESS
       our_goal: OUR GOAL
       goal: The only limit to the height of your achievements is the reach of your dreams and your willingness to work for them
-      something: SOME CAMPAIGNS
       current_address: LVIV, LV 79000
+  campaigns:
+    index:
+      create_campaign: Create new campaign
+      collected: Collected
+      needed: Needed
+      currency: UAH
+      read: Read more
+      edit: Edit
+      delete: Delete
+      are_you_sure: Are you sure?
+    show:
+      collected: Collected
+      needed: Needed
+      currency: UAH
+      back: Back
+    new:
+      create_campaign: Create campaign
+      title: Title
+      description: Description
+      needed_amount: Needed amount
+      requisite: Requisite
+      create: Create
+      back: Back
+    edit:
+      edit_campaign: Edit campaign
+      title: Title
+      description: Description
+      needed_amount: Needed amount
+      requisite: Requisite
+      edit: Edit
+      back: Back
+    create:
+      successfully_create: Campaign was successfully created!
+      didn_t_create: Campaign wasn't created
+    update:
+      successfully_update: Campaign was successfully updated!
+      didn_t_update: Campaign wasn't updated
+    destroy:
+      successfully_deleted: Campaign was successfully deleted!
+      didn_t_delete: Campaign wasn't deleted
   activerecord:
     errors:
       messages:

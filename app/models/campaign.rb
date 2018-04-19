@@ -10,4 +10,8 @@ class Campaign < ApplicationRecord
                         numericality: true,
                         length: { is: 16 },
                         format: { with: /\A\d+\z/ }
+
+  def percent_of_collected_amount
+    needed_amount.zero? ? 100 : 100 * current_amount / needed_amount
+  end
 end

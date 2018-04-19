@@ -1,0 +1,29 @@
+.container.block
+  = link_to t('.create_campaign'), new_campaign_path, class: 'btn btn-outline-success btn-submit'
+  .row
+    - @campaigns.each do |campaign|
+      .col-lg-4.col-md-6.col-xs-12.container-item
+        = image_tag 'territoriale.jpg', class: 'image', alt: 'charity project photo'
+        .finance
+          .collected
+            %span= t('.collected')
+            %br
+            %span= campaign.current_amount
+            %span= t('.currency')
+          .percent #{ campaign.percent_of_collected_amount }%
+          .need
+            %span= t('.needed')
+            %br
+            %span= campaign.needed_amount
+            %span= t('.currency')
+        .progress
+          .progress-bar.progress-done{ 'aria-valuemax': '100', 'aria-valuemin': '0', role: 'progressbar', style: "width: #{ campaign.percent_of_collected_amount }%" }
+        %hr
+        .title-block
+          %h4.title= campaign.title
+        %p.campaign-description= campaign.description
+        .buttons
+          = link_to t('.read'), campaign_path(campaign), class: 'btn btn-outline-info btn-campaigns'
+          = link_to t('.edit'), edit_campaign_path(campaign), class: 'btn btn-outline-info btn-campaigns'
+          = link_to t('.delete'), campaign_path(campaign), method: :delete,
+            data: { confirm: t('.are_you_sure') }, class: 'btn btn-outline-info btn-campaigns'

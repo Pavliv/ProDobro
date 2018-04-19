@@ -1,0 +1,16 @@
+.container.block
+  %h2.text-center= t('.edit_campaign')
+  .col-lg-6.col-md-8.mx-auto
+    = simple_form_for @campaign, url: { action: 'update' } do |f|
+      .form-group
+        = f.input :title, label: t('.title'), minlength: 3, class: 'form-control'
+      .form-group
+        = f.label t('.description'), required: true
+        = f.input_field :description, class: 'form-control input-field'
+      .form-group
+        = f.input :needed_amount, label: t('.needed_amount'), input_html: { min: '0' }, class: 'form-control'
+      .form-group
+        = f.input :requisite, label: t('.requisite'),  minlength: 16, maxlength: 16, class: 'form-control'
+      .actions
+        = f.submit t('.edit'), class: 'btn btn-outline-success btn-submit'
+    = link_to t('.back'), :back, class: 'btn btn-outline-secondary btn-back'

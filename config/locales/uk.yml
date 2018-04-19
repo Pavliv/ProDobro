@@ -16,8 +16,47 @@ uk:
       address: АДРЕСА
       our_goal: НАША ЦІЛЬ
       goal: Єдиним обмеженням до висоти ваших досягнень є досягнення ваших мрій та бажання працювати на них
-      something: ЯКАСЬ КАМПАНІЯ
       current_address: ЛЬВІВ, 79000
+  campaigns:
+    index:
+      create_campaign: Створити нову кампанію
+      collected: Зібрано
+      needed: Потрібно
+      currency: UAH
+      read: Читати далі
+      edit: Редагувати
+      delete: Видалити
+      are_you_sure: Ви впевнені?
+    show:
+      collected: Зібрано
+      needed: Потрібно
+      currency: UAH
+      back: Назад
+    new:
+      create_campaign: Створення кампанії
+      title: Заголовок
+      description: Опис
+      needed_amount: Необхідна сума
+      requisite: Реквізити
+      create: Створити
+      back: Назад
+    edit:
+      edit_campaign: Редагування кампанії
+      title: Заголовок
+      description: Опис
+      needed_amount: Необхідна сума
+      requisite: Реквізити
+      edit: Редагувати
+      back: Назад
+    create:
+      successfully_create: Кампанію успішно створено!
+      didn_t_create: Кампанію не створено
+    update:
+      successfully_update: Кампанію успішно оновлено!
+      didn_t_update: Кампанію не оновлено
+    destroy:
+      successfully_deleted: Кампанію успішно видалено!
+      didn_t_delete: Кампанію не видалено
   activerecord:
     errors:
       messages:

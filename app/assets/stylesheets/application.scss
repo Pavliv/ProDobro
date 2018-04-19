@@ -1,6 +1,8 @@
 @import "bootstrap";
 @import "variables";
+@import "general";
 @import "users";
+@import "campaigns";
 
 section {
   margin-top: 110px;
@@ -26,7 +28,7 @@ section {
   padding-right: 30px;
 }
 
-a.btn {
+a.btn-new {
   padding:0;
 }
 
@@ -36,14 +38,6 @@ a.btn {
 
 .navbar-dark .navbar-nav .active>.nav-link:hover {
   color: $color-blue;
-}
-
-#navbarDropdown:hover {
-  color: $color-blue;
-}
-
-.dropdown-menu a:hover {
-  background-color: $color-blue;
 }
 
 .row {
