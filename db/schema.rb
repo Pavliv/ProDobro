@@ -12,6 +12,20 @@
 
 ActiveRecord::Schema.define(version: 20180418152139) do
 
+  create_table "campaigns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "title"
+    t.text "description"
+    t.string "status"
+    t.decimal "current_amount", precision: 10, default: "0"
+    t.decimal "needed_amount", precision: 10
+    t.string "requisite"
+    t.integer "category_id"
+    t.datetime "finished_at"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "news", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.text "description"

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :news
+  has_many :campaigns
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
   validates :name, :surname, presence: true,
