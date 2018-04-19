@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418152139) do
+ActiveRecord::Schema.define(version: 20180419131257) do
+
+  create_table "addresses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "contact_id"
+    t.string "country", default: "Ukraine", null: false
+    t.string "street", default: "Pasternaka", null: false
+    t.string "building_number", default: "5a", null: false
+    t.string "city", default: "Lviv", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["contact_id"], name: "index_addresses_on_contact_id"
+  end
 
   create_table "campaigns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
@@ -22,6 +33,13 @@ ActiveRecord::Schema.define(version: 20180418152139) do
     t.integer "category_id"
     t.datetime "finished_at"
     t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "contacts", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string "email", default: "prodobro111@gmail.com", null: false
+    t.string "phone", default: "+38-032-240-99-99", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -31,6 +31,7 @@ group :development, :test do
   gem 'faker', '1.8.7'
   gem 'jshint'
   gem 'mysql2', '>= 0.3.18', '< 0.5'
+  gem 'pry'
   gem 'puma', '~> 3.7'
   gem 'rspec-rails', '~> 3.7.0'
   gem 'rubocop-ci', git: 'https://github.com/ad2games/rubocop-ci'
