@@ -1,0 +1,19 @@
+.container
+  .row.justify-content-center
+    .col-lg-5.col-md-6
+      %h2.header= t('.sign_up')
+      = simple_form_for(@user, url: users_path, html: { novalidate: false }) do |f|
+        .form-group
+          = f.input :email, label: 'Email', autofocus: true, autocomplete: 'email', input_html: { class: 'form-control' }, placeholder: 'example@mail.com', required: true
+        .form-group
+          = f.input :name, label: t('.name'), input_html: { class: 'form-control', minlength: 3, maxlength: 30 }
+        .form-group
+          = f.input :surname, label: t('.surname'), input_html: { class: 'form-control', minlength: 3, maxlength: 30 }
+        .form-group
+          = f.label :password, required: true
+          %em= t('devise.shared.minimum_password_length', count: @minimum_password_length)
+          = f.input :password, autocomplete: 'off', input_html: { id: 'password1', class: 'form-control', minlength: 6 }, label: false
+        .form-group
+          = f.input :password_confirmation, autocomplete: 'off',  input_html: { id: 'password2', class: 'form-control' }, required: true
+        .actions
+          = f.submit t('.sign_up'), class: 'btn btn-outline-info btn-size'

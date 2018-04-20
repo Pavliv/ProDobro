@@ -1,0 +1,31 @@
+<h1>Users#index</h1>
+<p>Find me in app/views/users/index.html.erb</p>
+
+  <table class="table table-striped">
+    <thead>
+      <tr class="info">
+        <th>ID</th>
+        <th>Name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Role</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    <% @users.each do |u| %>
+      <tr>
+        <td><%= u.id %></td>
+        <td><%= u.name %></td>
+        <td><%= u.surname %></td>
+        <td><%= u.email %></td>
+        <td><%= u.roles.blank? ? 'none' : u.roles.first.name %></td>
+        <td><%= link_to "View", user_path(u), class: 'btn btn-outline-info btn-size' %> |
+            <%= link_to "Edit", edit_user_path(u), class: 'btn btn-outline-info btn-size' %> |
+            <%= link_to "Delete", edit_user_path(u), class: 'btn btn-outline-info btn-size' %></td>
+      </tr>
+    <% end %>
+
+    </tbody>
+  </table>
