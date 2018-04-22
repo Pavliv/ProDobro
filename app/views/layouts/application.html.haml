@@ -19,13 +19,12 @@
                 %span
                   Logged in as
                   %strong= current_user.email
-                = link_to t(".edit_profile"), edit_user_registration_path, class: "btn"
-                = link_to t(".show_profile"), user_path(current_user), class: "btn"
-                = link_to t(".logout"), destroy_user_session_path, method: :delete, class: "btn"
+                = link_to t('.edit_profile'), edit_user_registration_path, class: 'btn-new'
+                = link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'btn-new'
               - else
-                = link_to t(".sign_up"), new_user_registration_path, class: "btn"
+                = link_to t('.sign_up'), new_user_registration_path, class: 'btn-new'
                 %span.pipe|
-                = link_to t(".login"), new_user_session_path, class: "btn"
+                = link_to t('.login'), new_user_session_path, class: 'btn-new'
             %li.d-inline
               %a= link_to 'EN', url_for(locale: :en)
             %span.pipe|
@@ -39,23 +38,18 @@
           #navbarSupportedContent.collapse.navbar-collapse
             %ul.navbar-nav.ml-auto
               %li.nav-item.active
+                = link_to t('.campaigns'), campaigns_path, class: 'nav-link'
+              %li.nav-item.active
                 %a.nav-link{href: "#"}= t(".news")
               %li.nav-item.active
                 %a.nav-link{href: "#"}= t(".about_us")
-              %li.nav-item.dropdown
-                %a#navbarDropdown.nav-link.dropdown-toggle.active{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", href: "#", role: "button"}
-                  = t(".campaigns")
-                .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-                  %a.dropdown-item{href: "#"}= t(".something")
-                  %a.dropdown-item{href: "#"}= t(".something")
-                  %a.dropdown-item{href: "#"}= t(".something")
               %li.nav-item.active
                 %a.nav-link{href: "#"}= t(".contacts")
     %section.no-gutters
       .container
         - flash.each do |message_type, message|
-          .alert.alert-info
-            %button.close{'data-dismiss' => 'alert', type: 'button'} ×
+          %div{class: "alert alert-#{message_type == 'notice' ? 'success' : 'info'}"}
+            %button.close{'data-dismiss': 'alert', type: 'button'} ×
             #{message}
         = yield
     %footer.page-footer.font-small.bg-dark

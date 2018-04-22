@@ -1,0 +1,22 @@
+.container.block
+  .row
+    %h1.col-lg-12.title.text-center= @campaign.title
+    .col-lg-8.col-md-7.col-xs-12
+      = image_tag 'territoriale.jpg', class: 'image', alt: 'charity project photo'
+    .col-lg-4.col-md-5.col-xs-12.statistic
+      .finance
+        .collected
+          %span= t('.collected')
+          %br
+          %span= @campaign.current_amount
+          %span= t('.currency')
+        .percent #{ @campaign.percent_of_collected_amount }%
+        .need
+          %span= t('.needed')
+          %br
+          %span= @campaign.needed_amount
+          %span= t('.currency')
+      .progress
+        .progress-bar.progress-done{ 'aria-valuemax': '100', 'aria-valuemin': '0', role: 'progressbar', style: "width: #{ @campaign.percent_of_collected_amount }%" }
+    .col-md-12.description= @campaign.description
+    .col-md-12= link_to t('.back'), :back, class: 'btn btn-outline-secondary btn-back'

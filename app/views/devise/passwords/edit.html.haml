@@ -2,7 +2,7 @@
   .row.justify-content-center
     .col-lg-5.col-md-6
       %h2.text-center.header= t('.change_your_password')
-      = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put, novalidate: false }) do |f|
+      = simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f|
         = f.hidden_field :reset_password_token
         .form-group
           = f.label :password, t('.new_password')

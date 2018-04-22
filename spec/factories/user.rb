@@ -5,5 +5,6 @@ FactoryBot.define do
     email Faker::Internet.email
     password '369852'
     password_confirmation '369852'
+    confirmed_at Time.zone.now
   end
 end

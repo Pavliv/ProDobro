@@ -1,0 +1,69 @@
+.finance {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+  color: $color-grey;
+}
+
+.collected {
+  text-align: left;
+}
+
+.percent {
+  text-align: center;
+  padding-top: 13px;
+}
+
+.need {
+  text-align: right;
+}
+
+.progress-done {
+  background-color: $turquoise;
+}
+
+.title-block {
+  height: 70px;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.title {
+  margin: 20px 0 10px;
+  color: $turquoise;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.campaign-description {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-campaigns {
+  margin: 0 0 5px 5px;
+  padding: 5px 10px;
+}
+
+.statistic {
+  margin: 20px 0;
+}
+
+.description {
+  margin-top: 30px;
+}
+
+.btn-back {
+  margin-top: 10px;
+}
+
+.btn-submit {
+  margin: 10px 0 0;
+  padding: 5px 30px;
+}
