@@ -1,0 +1,48 @@
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background-color: #343a40;
+}
+
+.error-page {
+  display: flex;
+  width: 80%;
+  height: 95%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  vertical-align: center;
+  border: 3px solid white;
+  margin-top: 10px;
+}
+
+.error-page h1 {
+  font-size: 20vh;
+  font-weight: bold;
+  margin: -6vh 0 0;
+  color:white;
+}
+
+.error-page h1 + p {
+  font-size: 3vw;
+  font-weight: bold;
+  color: #4599a7;
+}
+
+.error-page .image{
+  height: 15vw;
+  margin-bottom: 10%;
+}
+
+@media (max-width: 767px) {
+  .error-page h1 {
+    font-size: 32vw;
+  }
+  .error-page h1 + p {
+    font-size: 8vw;
+  }
+  .image{
+    min-height: 30vw;
+  }
+}
