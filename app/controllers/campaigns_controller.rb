@@ -1,5 +1,5 @@
 class CampaignsController < ApplicationController
-  before_action :load_campaign, only: %i[show edit update destroy]
+  before_action :load_campaign, only: %i[show edit update destroy publish hold close]
 
   def index
     @campaigns = Campaign.all
@@ -43,6 +43,21 @@ class CampaignsController < ApplicationController
     end
   end
 
+  def publish
+    redirect_to campaigns_path if @campaign.publish!
+    flash[:notice] = t('.successfully_published')
+  end
+
+  def hold
+    redirect_to campaigns_path if @campaign.hold!
+    flash[:notice] = t('.successfully_hold_on')
+  end
+
+  def close
+    redirect_to campaigns_path if @campaign.close!
+    flash[:notice] = t('.successfully_closed')
+  end
+
   private
 
   def load_campaign
@@ -51,6 +66,6 @@ class CampaignsController < ApplicationController
 
   def campaigns_params
     params.require(:campaign).permit(:title, :description, :needed_amount,
-                                     :requisite, :created_at, :updated_at)
+                                     :requisite)
   end
 end

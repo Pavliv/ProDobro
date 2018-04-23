@@ -123,4 +123,66 @@ RSpec.describe CampaignsController, type: :controller do
       end
     end
   end
+
+  describe 'PATCH #publish' do
+    before do
+      patch :publish, params: { id: campaign.id }
+    end
+
+    context 'when state is new' do
+      it { expect(campaign).to have_state(:new) }
+
+      it { expect(campaign).to allow_event :publish }
+
+      it { expect(campaign).to_not allow_event :hold }
+
+      it { expect(campaign).to_not allow_event :close }
+    end
+
+    it { is_expected.to redirect_to(campaigns_path) }
+
+    it { is_expected.to set_flash }
+  end
+
+  describe 'PATCH #hold' do
+    before do
+      patch :publish, params: { id: campaign.id, aasm_state: campaign.publish }
+      patch :hold, params: { id: campaign.id, aasm_state: campaign.hold }
+    end
+
+    context 'when state is on_hold' do
+      it { expect(campaign).to have_state(:on_hold) }
+
+      it { expect(campaign).to allow_event :publish }
+
+      it { expect(campaign).to allow_event :close }
+
+      it { expect(campaign).to_not allow_event :hold }
+    end
+
+    it { is_expected.to redirect_to(campaigns_path) }
+
+    it { is_expected.to set_flash }
+  end
+
+  describe 'PATCH #close' do
+    before do
+      patch :publish, params: { id: campaign.id, aasm_state: campaign.publish }
+      patch :close, params: { id: campaign.id, aasm_state: campaign.close }
+    end
+
+    context 'when state is close' do
+      it { expect(campaign).to have_state(:closed) }
+
+      it { expect(campaign).to_not allow_event :publish }
+
+      it { expect(campaign).to_not allow_event :hold }
+
+      it { expect(campaign).to_not allow_event :close }
+    end
+
+    it { is_expected.to redirect_to(campaigns_path) }
+
+    it { is_expected.to set_flash }
+  end
 end

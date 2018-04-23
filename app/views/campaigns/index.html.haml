@@ -27,3 +27,19 @@
           = link_to t('.edit'), edit_campaign_path(campaign), class: 'btn btn-outline-info btn-campaigns'
           = link_to t('.delete'), campaign_path(campaign), method: :delete,
             data: { confirm: t('.are_you_sure') }, class: 'btn btn-outline-info btn-campaigns'
+        .style-dropdown
+          %span= t('.campaign_state_is')
+          %span.dropdown.right-position
+            %button.btn.btn-outline-info.dropdown-toggle(data-toggle='dropdown' type='button')
+              %span= campaign.aasm_state
+            .dropdown-menu
+              - if campaign.new?
+                = link_to t('.publish'), publish_campaign_path(campaign), method: :patch, class: 'dropdown-item'
+              - elsif campaign.published?
+                = link_to t('.hold'), hold_campaign_path(campaign), method: :patch, class: 'dropdown-item'
+                = link_to t('.close'), close_campaign_path(campaign), method: :patch, class: 'dropdown-item'
+              - elsif campaign.on_hold?
+                = link_to t('.publish'), publish_campaign_path(campaign), method: :patch, class: 'dropdown-item'
+                = link_to t('.close'), close_campaign_path(campaign), method: :patch, class: 'dropdown-item'
+              - else
+                %span.dropdown-item Campaign not available

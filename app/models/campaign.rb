@@ -1,4 +1,7 @@
 class Campaign < ApplicationRecord
+  require_relative 'concerns/campaigns/campaign_state_machines'
+  include CampaignStateMachines
+
   belongs_to :user
   validates :title, presence: true,
                     uniqueness: true,

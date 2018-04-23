@@ -20,6 +20,7 @@
                   Logged in as
                   %strong= current_user.email
                 = link_to t('.edit_profile'), edit_user_registration_path, class: 'btn-new'
+                %span.pipe|
                 = link_to t('.logout'), destroy_user_session_path, method: :delete, class: 'btn-new'
               - else
                 = link_to t('.sign_up'), new_user_registration_path, class: 'btn-new'

@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180418152139) do
+ActiveRecord::Schema.define(version: 20180423132930) do
 
   create_table "campaigns", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string "title"
     t.text "description"
-    t.string "status"
     t.decimal "current_amount", precision: 10, default: "0"
     t.decimal "needed_amount", precision: 10
     t.string "requisite"
@@ -24,6 +23,7 @@ ActiveRecord::Schema.define(version: 20180418152139) do
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "aasm_state"
   end
 
   create_table "news", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

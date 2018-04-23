@@ -6,8 +6,8 @@ en:
       edit_profile: Edit Profile
       show_profile: Show Profile
       logout: Logout
-      sign_up: Sign Up
-      login: login
+      sign_up: Sign up
+      login: Sign in
       news: NEWS
       about_us: ABOUT US
       campaigns: CAMPAIGNS
@@ -27,6 +27,10 @@ en:
       edit: Edit
       delete: Delete
       are_you_sure: Are you sure?
+      publish: publish
+      hold: hold
+      close: close
+      campaign_state_is: Campaign's state is
     show:
       collected: Collected
       needed: Needed
@@ -57,6 +61,12 @@ en:
     destroy:
       successfully_deleted: Campaign was successfully deleted!
       didn_t_delete: Campaign wasn't deleted
+    publish:
+      successfully_published: Campaign was successfully published!
+    hold: 
+      successfully_hold_on: Campaign was successfully held!
+    close:
+      successfully_closed: Campaign was successfully closed!
   news: 
     index:
       create_news: Create news
