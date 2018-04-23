@@ -1,0 +1,12 @@
+.container
+%h2.text-center= t('.create_news')
+.col-lg-6.col-md-8.mx-auto
+  = simple_form_for(@news, url: {action: 'create'}) do |form|
+    .field.form-group
+      = form.input :title, label: t('.title'), minlength:3, class: 'form-control'
+    .field.form-group
+      %label= t('.description')
+      = form.input_field :description, required: false, class: 'form-control input-field'
+    .actions
+      = form.submit t('.create'), class: 'btn btn-outline-success'
+      = link_to t('.back'), :back, class: 'btn btn-outline-secondary'

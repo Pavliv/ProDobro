@@ -4,3 +4,4 @@ config/database.yml
 /.bundle
 .env
 public/assets
+.byebug_history

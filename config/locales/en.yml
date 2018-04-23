@@ -57,6 +57,36 @@ en:
     destroy:
       successfully_deleted: Campaign was successfully deleted!
       didn_t_delete: Campaign wasn't deleted
+  news: 
+    index:
+      create_news: Create news
+      edit: Edit
+      delete: Delete
+      are_you_sure?: Are you sure?
+    show:
+      posted_at: Posted at
+      description: Description
+    edit:
+      edit_news: Edit news
+      title: Title
+      description: Description
+      edit: Edit
+      back: Back
+    update:
+      news_updated: News was successfully updated
+      news_notupdated: News was not updated
+    create:
+      news_created: News was successfully created
+      news_notcreated: News was not created
+    destroy:
+      news_deleted: News was successfully deleted
+      news_notdeleted: News was not deleted
+    new:
+      create_news: Create news
+      title: Title
+      description: Description
+      create: Create
+      back: Back
   activerecord:
     errors:
       messages:
@@ -266,5 +296,5 @@ en:
     formats:
       default: "%a, %d %b %Y %H:%M:%S %z"
       long: "%B %d, %Y %H:%M"
-      short: "%d %b %H:%M"
+      short: "%b %d, %Y"
     pm: pm
