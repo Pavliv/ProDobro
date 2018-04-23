@@ -13,7 +13,7 @@ html, body {
   justify-content: center;
   text-align: center;
   vertical-align: center;
-  border: 3px solid white;
+  border: 3px solid #fff;
   margin-top: 10px;
 }
 
@@ -21,7 +21,7 @@ html, body {
   font-size: 20vh;
   font-weight: bold;
   margin: -6vh 0 0;
-  color:white;
+  color: #fff;
 }
 
 .error-page h1 + p {
