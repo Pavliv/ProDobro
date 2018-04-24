@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 20180418152139) do
     t.integer "category_id"
     t.datetime "finished_at"
     t.integer "user_id"
-    
+  end
   create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.text "body"
     t.integer "user_id"

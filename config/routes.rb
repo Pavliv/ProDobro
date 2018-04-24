@@ -5,4 +5,9 @@ Rails.application.routes.draw do
     resources :campaigns
     resources :news
   end
+  resources :news do
+    resources :comments
+  end
+
+  #root to: 'news#index'
 end
