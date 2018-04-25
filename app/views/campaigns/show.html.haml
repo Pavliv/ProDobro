@@ -20,3 +20,6 @@
         .progress-bar.progress-done{ 'aria-valuemax': '100', 'aria-valuemin': '0', role: 'progressbar', style: "width: #{ @campaign.percent_of_collected_amount }%" }
     .col-md-12.description= @campaign.description
     .col-md-12= link_to t('.back'), :back, class: 'btn btn-outline-secondary btn-back'
+  = render "comments/comments"
+  - if user_signed_in?
+    = render "comments/form"

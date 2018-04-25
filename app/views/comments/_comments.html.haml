@@ -1,18 +1,19 @@
 .container
   .row
     #comments.comments.col-md-9
-      %h3.mb-2 Comments
+      %h3.mb-2= t('.title')
   - @comments.each do |comment|
     .comment.mb-2.row
       .comment-avatar.col-md-1.col-sm-2.text-center.pr-1
-        %a{href: ""}
-          %img.mx-auto.rounded-circle.img-fluid{alt: "avatar", src: "http://demos.themes.guide/bodeo/assets/images/users/m103.jpg"}/
+        = image_tag 'face.jpg', class: 'img mx-auto rounded-circle img-fluid', alt: 'news photo'
       .comment-content.col-md-11.col-sm-10
         %h6.small.comment-meta
-          %strong= comment.user.name + ' ' + comment.user.surname
-          = time_ago_in_words(comment.created_at) + ' commented'
+          %strong= user_full_name(comment)
+          = time_ago_in_words(comment.created_at) + ' ' + t('.commented')
           %p
-          %a= link_to t('.edit'), edit_news_comment_path(@news.id,comment), class: 'btn btn-outline-info a_news'
-          %a= link_to t('.delete'), news_comment_path(@news.id,comment), method: :delete, data: { confirm: t('.are_you_sure?') }, class: 'btn btn-outline-info a_news'
           .comment-body= comment.body
+          %br/
+          - if user_allowed_to_manage(comment)
+            = link_to t('.edit'), edit_polymorphic_path([@commentable, comment]) ,class: 'btn btn-outline-info'
+            = link_to t('.delete'), polymorphic_path([@commentable, comment]), method: :delete, data: { confirm: t('.are_you_sure?') }, class: 'btn btn-outline-info'
           %br/

@@ -4,6 +4,18 @@ class ApplicationController < ActionController::Base
 
   private
 
+  def load_commentable
+    request_path = request.path.split('/')
+    if request_path[1] == 'uk' || request_path[1] == 'en'
+      resource, id = request_path[2, 3]
+    else
+      resource, id = request_path[1, 3]
+    end
+    @commentable = resource.singularize.classify.constantize.find(id)
+    @comments = @commentable.comments
+    @comment = Comment.new
+  end
+
   def set_locale
     I18n.locale = params[:locale] || I18n.default_locale
   end

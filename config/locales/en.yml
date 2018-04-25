@@ -87,6 +87,26 @@ en:
       description: Description
       create: Create
       back: Back
+  comments: 
+    edit:
+      edit_comment: Edit Comment
+      back: Back
+      edit: Edit Comment
+    comment:
+      updated: Comment was successfully updated
+      not_updated: Comment was not updated
+      created: Comment was successfully created
+      not_created: Comment was not created
+      deleted: Comment was successfully deleted
+      not_deleted: Comment was not deleted
+    form:
+      create: Create comment
+    comments:
+      commented: commented
+      title: Comments
+      are_you_sure?: Are you sure?
+      edit: Edit
+      delete: Delete
   activerecord:
     errors:
       messages:
@@ -150,8 +170,8 @@ en:
   datetime:
     distance_in_words:
       about_x_hours:
-        one: about 1 hour
-        other: about %{count} hours
+        one: about 1 hour ago
+        other: about %{count} hours ago
       about_x_months:
         one: about 1 month
         other: about %{count} months

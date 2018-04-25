@@ -94,6 +94,26 @@ uk:
       description: Опис
       create: Створити
       back: Назад
+  comments: 
+    edit:
+      edit_comment: Редагувати коментар
+      back: Назад
+      edit: Редагувати
+    comment:
+      updated: Коментар відредаговано
+      not_updated: Коментар не відредаговано
+      created: Коментар створено
+      not_created: Коментар не створено
+      deleted: Коментар видалено
+      not_deleted: Коментар не видалено
+    form:
+      create: Створити коментар
+    comments:
+      commented: прокоментував
+      title: Коментарі
+      are_you_sure?: Ви впевнені?
+      edit: Редагувати
+      delete: Видалити
   views:
     pagination:
       first: "&laquo; Перша"
@@ -157,9 +177,9 @@ uk:
   datetime:
     distance_in_words:
       about_x_hours:
-        few: близько %{count} години
-        many: близько %{count} годин
-        one: близько %{count} година
+        few: близько %{count} години тому
+        many: близько %{count} годин тому
+        one: близько %{count} години тому
         other: близько %{count} години
       about_x_months:
         few: близько %{count} місяців

@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe NewsController, type: :controller do
-<<<<<<< HEAD
   let(:news) { create(:valid_news) }
 
   describe 'GET #index' do
@@ -124,7 +123,4 @@ RSpec.describe NewsController, type: :controller do
       end
     end
   end
-=======
-
->>>>>>> Rebase
 end

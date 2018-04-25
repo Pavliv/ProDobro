@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe(User, type: :model) do
-  let(:user) { create (:user) }
+  let(:user) { create(:user) }
 
   describe 'validations' do
     it { is_expected.to validate_presence_of(:name) }
@@ -19,7 +19,7 @@ RSpec.describe(User, type: :model) do
     it { is_expected.to have_many(:news) }
   end
 
-  # context 'when user create many сomments' do
-  #   it { is_expected.to have_many(:сomments) }
-  # end
+  context 'when user create many comments' do
+    it { is_expected.to have_many(:comments) }
+  end
 end

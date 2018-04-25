@@ -1,16 +1,12 @@
 class NewsController < ApplicationController
   before_action :load_news, only: %i[show edit update destroy]
+  before_action :load_commentable, only: %i[show]
 
   def index
     @news = News.order(:created_at).page(params[:page])
   end
 
-  def show
-  news_id
-  @commentable = @news
-  @comments = @commentable.comments
-  @comment = Comment.new
-  end
+  def show; end
 
   def new
     @news = News.new
@@ -52,9 +48,9 @@ class NewsController < ApplicationController
 
   def load_news
     @news = News.find_by(id: params[:id]) || render_404
+  end
 
   def news_params
     params.require(:news).permit(:title, :description)
   end
-  
 end
