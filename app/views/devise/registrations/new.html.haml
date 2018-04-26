@@ -15,6 +15,9 @@
           = f.input :password, autocomplete: 'off', input_html: { id: 'password1', class: 'form-control', minlength: 6 }, label: false
         .form-group
           = f.input :password_confirmation, autocomplete: 'off',  input_html: { id: 'password2', class: 'form-control' }, required: true
+        .form-group
+          = image_tag(@user.image_url) if @user.image?
+          = f.file_field :image
         .actions
           = f.submit t('.sign_up'), class: 'btn btn-outline-info btn-size'
       = render 'devise/shared/links'

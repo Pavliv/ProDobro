@@ -11,6 +11,9 @@
         = f.input :needed_amount, label: t('.needed_amount'), input_html: { min: '0' }, class: 'form-control'
       .form-group
         = f.input :requisite, label: t('.requisite'), minlength: 16, maxlength: 16, class: 'form-control'
+      .form-group
+        / = image_tag(@campaign.image_url) if @campaign.image?
+        = f.file_field :image
       .actions
         = f.submit t('.create'), class: 'btn btn-outline-success btn-submit'
-    = link_to t('.back'), :back, class: 'btn btn-outline-secondary btn-back'
+        = link_to t('.back'), :back, class: 'btn btn-outline-secondary btn-back'

@@ -58,6 +58,8 @@ Devise.setup do |config|
   # change their passwords.
   config.reset_password_within = 6.hours
 
+  config.mailer_sender = ENV['GMAIL_USERNAME']
+
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
 

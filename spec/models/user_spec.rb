@@ -15,5 +15,7 @@ RSpec.describe(User, type: :model) do
     it { is_expected.to have_many(:campaigns) }
 
     it { is_expected.to have_many(:news) }
+
+    it { is_expected.to have_one(:image) }
   end
 end

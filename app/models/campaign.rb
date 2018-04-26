@@ -1,4 +1,6 @@
 class Campaign < ApplicationRecord
+  mount_uploader :image, ImageUploader
+  has_one :image, as: :imageable
   belongs_to :user
   validates :title, presence: true,
                     uniqueness: true,

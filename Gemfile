@@ -7,14 +7,17 @@ end
 
 gem 'bootstrap', '~> 4.0.0'
 gem 'cancancan', '~> 2.0'
+gem 'carrierwave'
 gem 'coffee-rails', '~> 4.2'
 gem 'devise', '~> 4.4.3'
 gem 'devise-i18n'
 gem 'dotenv-rails'
+gem "fog"
 gem 'haml', '~> 5.0.0'
 gem 'jbuilder', '~> 2.5'
 gem 'jquery-rails', '~> 4.3.1'
 gem 'kaminari'
+gem 'mini_magick'
 gem 'nokogiri'
 gem 'premailer-rails'
 gem 'rails', '~> 5.1.5'
