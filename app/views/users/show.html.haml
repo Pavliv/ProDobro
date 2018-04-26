@@ -1,0 +1,23 @@
+%h1 User info
+%hr/
+%h3
+  %b
+    Email:
+  = @user.email
+%p
+  %b
+    = t('users.new.name') + ':'
+  = @user.name
+%p
+  %b
+    = t('users.new.surname') + ':'
+  = @user.surname
+
+%p
+  %b
+    = t('users.new.role') + ':'
+  = show_user_role(@user)
+.actions
+  = link_to "Edit", edit_user_path(@user), class: 'btn btn-outline-warning btn-size'
+  = link_to "Delete", user_path(@user), method: :delete, class: 'btn btn-outline-danger btn-size'
+= link_to "<-- Back", :back

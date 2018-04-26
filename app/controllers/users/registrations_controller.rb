@@ -5,7 +5,7 @@ module Users
     protected
 
     def configure_sign_up_params
-      devise_parameter_sanitizer.permit(:sign_up, keys: %i[name surname])
+      devise_parameter_sanitizer.permit(:sign_up, keys: %i[name surname roles])
     end
   end
 end

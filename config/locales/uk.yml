@@ -1,6 +1,16 @@
 ---
 uk:
-  layouts: 
+  users:
+    new:
+      name: Ім'я
+      surname: Прізвище
+      create_user: Створити користувача
+      create: Створити
+      password: Пароль
+      role: Роль
+    edit:
+      update: Оновити дані
+  layouts:
     application:
       title: ПроДобро
       edit_profile: Редагувати профіль

@@ -1,6 +1,16 @@
 ---
 en:
-  layouts: 
+  users:
+    new:
+      name: Name
+      surname: Surname
+      create_user: Create user
+      create: Create
+      password: Password
+      role: Role
+    edit:
+      update: Update
+  layouts:
     application:
       title: ProDobro
       edit_profile: Edit Profile

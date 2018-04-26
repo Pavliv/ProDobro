@@ -130,7 +130,7 @@ en:
         sign_up: Sign up
       minimum_password_length:
         one: "(%{count} character minimum)"
-        other: "(%{count} characters minimum)"
+        many: "(%{count} characters minimum)"
     unlocks:
       new:
         resend_unlock_instructions: Resend unlock instructions

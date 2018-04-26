@@ -1,0 +1,58 @@
+%h1 Users list
+%div
+  = link_to "Create user", new_user_path, class: 'btn btn-outline-success btn-size'
+%table.table.table-striped.users-list
+  %thead
+    %tr.info
+      %th ID
+      %th Name
+      %th Last name
+      %th Email
+      %th Role
+      %th Action
+  %tbody
+    - @users.each do |u|
+      %tr
+        %td= u.id
+        %td= u.name
+        %td= u.surname
+        %td= u.email
+        %td= show_user_role(u)
+        %td
+          = link_to "View", user_path(u), class: 'btn btn-outline-info btn-size'
+          = link_to "Edit", edit_user_path(u), class: 'btn btn-outline-warning btn-size'
+          = link_to "Delete", user_path(u), method: :delete, class: 'btn btn-outline-danger btn-size'
+-# <h1>Users list</h1>
+-#
+-# <div>
+-#   <%= link_to "Create user", new_user_path, class: 'btn btn-outline-success btn-size' %>
+-# </div>
+-#
+-# <table class="table table-striped users-list">
+-#   <thead>
+-#     <tr class="info">
+-#       <th>ID</th>
+-#       <th>Name</th>
+-#       <th>Last name</th>
+-#       <th>Email</th>
+-#       <th>Role</th>
+-#       <th>Action</th>
+-#     </tr>
+-#   </thead>
+-#   <tbody>
+-#   <% @users.each do |u| %>
+-#     <tr>
+-#       <td><%= u.id %></td>
+-#       <td><%= u.name %></td>
+-#       <td><%= u.surname %></td>
+-#       <td><%= u.email %></td>
+-#       <td><%= show_user_role(u) %></td>
+-#       <td>
+-#         <%= link_to "View", user_path(u), class: 'btn btn-outline-info btn-size' %>
+-#         <%= link_to "Edit", edit_user_path(u), class: 'btn btn-outline-warning btn-size' %>
+-#         <%= link_to "Delete", user_path(u), method: :delete, class: 'btn btn-outline-danger btn-size' %>
+-#       </td>
+-#     </tr>
+-#   <% end %>
+-#   </tbody>
+-# </table>
