@@ -171,7 +171,7 @@ RSpec.describe CampaignsController, type: :controller do
       patch :close, params: { id: campaign.id, aasm_state: campaign.close }
     end
 
-    context 'when state is close' do
+    context 'when state is closed' do
       it { expect(campaign).to have_state(:closed) }
 
       it { expect(campaign).to_not allow_event :publish }
