@@ -8,8 +8,22 @@ en:
       create: Create
       password: Password
       role: Role
+    show:
+      back: Back
     edit:
       update: Update
+    index:
+      users_list: Users list
+      action: Action
+      view: View
+      edit: Edit
+      delete: Delete
+    update:
+      successfully_create: Created new User!
+      didn_t_create: User creation error!
+    update:
+      successfully_update: Updated successfully!
+      didn_t_update: Error occured while updating!
   layouts:
     application:
       title: ProDobro
@@ -67,7 +81,7 @@ en:
     destroy:
       successfully_deleted: Campaign was successfully deleted!
       didn_t_delete: Campaign wasn't deleted
-  news: 
+  news:
     index:
       create_news: Create news
       edit: Edit

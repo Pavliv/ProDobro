@@ -1,15 +1,20 @@
-%h1 Users list
+%h1
+  = t('.users_list')
 %div
-  = link_to "Create user", new_user_path, class: 'btn btn-outline-success btn-size'
+  = link_to t('users.new.create_user'), new_user_path, class: 'btn btn-outline-success create-btn'
 %table.table.table-striped.users-list
   %thead
     %tr.info
       %th ID
-      %th Name
-      %th Last name
+      %th
+        = t('users.new.name')
+      %th
+        = t('users.new.surname')
       %th Email
-      %th Role
-      %th Action
+      %th
+        = t('users.new.role')
+      %th
+        = t('.action')
   %tbody
     - @users.each do |u|
       %tr
@@ -19,9 +24,9 @@
         %td= u.email
         %td= show_user_role(u)
         %td
-          = link_to "View", user_path(u), class: 'btn btn-outline-info btn-size'
-          = link_to "Edit", edit_user_path(u), class: 'btn btn-outline-warning btn-size'
-          = link_to "Delete", user_path(u), method: :delete, class: 'btn btn-outline-danger btn-size'
+          = link_to t('.view'), user_path(u), class: 'btn btn-outline-info'
+          = link_to t('.edit'), edit_user_path(u), class: 'btn btn-outline-warning'
+          = link_to t('.delete'), user_path(u), method: :delete, class: 'btn btn-outline-danger'
 -# <h1>Users list</h1>
 -#
 -# <div>

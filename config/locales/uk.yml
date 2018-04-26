@@ -8,8 +8,22 @@ uk:
       create: Створити
       password: Пароль
       role: Роль
+    show:
+      back: Назад
     edit:
       update: Оновити дані
+    index:
+      users_list: Список користувачів
+      action: Дія
+      view: Показати
+      edit: Редагувати
+      delete: Видалити
+    create:
+      successfully_create: Створено нового користувача!
+      didn_t_create: Виникла помилка при створенні нового користувача!
+    update:
+      successfully_update: Дані користувача успішно оновлено!
+      didn_t_update: При оновленні даних виникла помилка!
   layouts:
     application:
       title: ПроДобро
@@ -74,7 +88,7 @@ uk:
         restrict_dependent_destroy:
           has_one: 'Неможливо видалити запис, так як існує залежність: %{record}'
           has_many: 'Неможливо видалити запис, так як існують залежності: %{record}'
-  news: 
+  news:
     index:
       create_news: Створити новину
       edit: Змінити

@@ -17,5 +17,5 @@
         %em= t('devise.shared.minimum_password_length', count: @minimum_password_length)
         = f.input :password, autocomplete: 'off', input_html: { id: 'password1', class: 'form-control', minlength: 6 }, label: false, required: true
         = f.submit t('.update'), class: 'btn btn-outline-info btn-size'
-      = link_to "<-- Back", :back
-      
+      %hr/
+      = link_to t('users.show.back'), :back, class: 'btn btn-outline-secondary'

@@ -5,20 +5,20 @@
     color: $turquoise;
   }
 }
-
 .btn-size {
   padding: 5px 30px;
   margin-bottom: 10px;
 }
-
 .header {
   margin: 25px 0;
 }
-
 abbr[title] {
   text-decoration: none;
 }
 .users-list td, .users-list th{
   padding: 0.2rem;
   vertical-align: middle;
+}
+.create-btn{
+  margin-bottom: 10px;
 }

@@ -11,3 +11,10 @@ window.onload = function () {
   document.getElementById('password1').onchange = validatePassword;
   document.getElementById('password2').onchange = validatePassword;
 };
+
+window.addEventListener('load', function(){
+  var user_roles = document.getElementById('user_roles')
+  if (user_roles){
+    user_roles.className += 'form-control';
+  }
+});
