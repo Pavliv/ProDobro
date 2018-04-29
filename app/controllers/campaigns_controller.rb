@@ -44,18 +44,36 @@ class CampaignsController < ApplicationController
   end
 
   def publish
-    redirect_to campaigns_path if @campaign.publish!
-    flash[:notice] = t('.successfully_published')
+    if @campaign.may_publish?
+      @campaign.publish!
+      redirect_to campaigns_path
+      flash[:notice] = t('.successfully_published')
+    else
+      redirect_to campaigns_path
+      flash[:alert] = t('.unsuccessful_published')
+    end
   end
 
   def hold
-    redirect_to campaigns_path if @campaign.hold!
-    flash[:notice] = t('.successfully_hold_on')
+    if @campaign.may_hold?
+      @campaign.hold!
+      redirect_to campaigns_path
+      flash[:notice] = t('.successfully_hold_on')
+    else
+      redirect_to campaigns_path
+      flash[:alert] = t('.unsuccessful_hold_on')
+    end
   end
 
   def close
-    redirect_to campaigns_path if @campaign.close!
-    flash[:notice] = t('.successfully_closed')
+    if @campaign.may_close?
+      @campaign.close!
+      redirect_to campaigns_path
+      flash[:notice] = t('.successfully_closed')
+    else
+      redirect_to campaigns_path
+      flash[:alert] = t('.unsuccessful_closed')
+    end
   end
 
   private

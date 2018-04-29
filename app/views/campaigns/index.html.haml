@@ -28,7 +28,7 @@
           = link_to t('.delete'), campaign_path(campaign), method: :delete,
             data: { confirm: t('.are_you_sure') }, class: 'btn btn-outline-info btn-campaigns'
         .style-dropdown
-          %span= t('.campaign_state_is')
+          %span= t('.campaign_is')
           %span.dropdown.right-position
             %button.btn.btn-outline-info.dropdown-toggle(data-toggle='dropdown' type='button')
               %span= campaign.aasm_state
@@ -42,4 +42,4 @@
                 = link_to t('.publish'), publish_campaign_path(campaign), method: :patch, class: 'dropdown-item'
                 = link_to t('.close'), close_campaign_path(campaign), method: :patch, class: 'dropdown-item'
               - else
-                %span.dropdown-item Campaign not available
+                %span.dropdown-item= t('.campaign_not_available')

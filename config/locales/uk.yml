@@ -30,7 +30,8 @@ uk:
       publish: опублікувати
       hold: заморозити
       close: закрити
-      campaign_state_is: Стан кампанії
+      campaign_is: Стан кампанії
+      campaign_not_available: Кампанія недоступна
     show:
       collected: Зібрано
       needed: Потрібно
@@ -62,11 +63,14 @@ uk:
       successfully_deleted: Кампанію успішно видалено!
       didn_t_delete: Кампанію не видалено
     publish:
-      successfully_published: Кампанію опубліковано
+      successfully_published: Кампанію опубліковано!
+      unsuccessful_published: Кампанію вже опубліковано!
     hold: 
-      successfully_hold_on: Кампанію заморожено
+      successfully_hold_on: Кампанію заморожено!
+      unsuccessful_hold_on: Кампанію вже заморожено!
     close:
-      successfully_closed: Капманію закрито
+      successfully_closed: Капманію закрито!
+      unsuccessful_closed: Кампанію вже закрито!
   activerecord:
     errors:
       messages:

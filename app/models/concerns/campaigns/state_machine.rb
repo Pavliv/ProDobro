@@ -1,5 +1,5 @@
 module Campaigns
-  module StateMachines
+  module StateMachine
     extend ActiveSupport::Concern
 
     included do

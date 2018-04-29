@@ -30,7 +30,8 @@ en:
       publish: publish
       hold: hold
       close: close
-      campaign_state_is: Campaign's state is
+      campaign_is: Campaign is
+      campaign_not_available: Campaign not available
     show:
       collected: Collected
       needed: Needed
@@ -63,10 +64,13 @@ en:
       didn_t_delete: Campaign wasn't deleted
     publish:
       successfully_published: Campaign was successfully published!
+      unsuccessful_published: Campaign was already published!
     hold: 
       successfully_hold_on: Campaign was successfully held!
+      unsuccessful_hold_on: Campaign was already on hold!
     close:
       successfully_closed: Campaign was successfully closed!
+      unsuccessful_closed: Campaign was already closed!
   news: 
     index:
       create_news: Create news

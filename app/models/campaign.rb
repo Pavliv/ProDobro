@@ -1,5 +1,5 @@
 class Campaign < ApplicationRecord
-  include Campaigns::StateMachines
+  include Campaigns::StateMachine
 
   belongs_to :user
   validates :title, presence: true,
