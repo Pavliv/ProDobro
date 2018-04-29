@@ -1,7 +1,9 @@
-%h1
-  = t('.users_list')
-%div
-  = link_to t('users.new.create_user'), new_user_path, class: 'btn btn-outline-success create-btn'
+.row
+  .col-sm-6
+    %h2
+      = t('.users_list')
+  .col-sm-6.text-right
+    = link_to t('users.new.create_user'), new_user_path, class: 'btn btn-outline-success create-btn'
 %table.table.table-striped.users-list
   %thead
     %tr.info
@@ -26,38 +28,4 @@
         %td
           = link_to t('.view'), user_path(u), class: 'btn btn-outline-info'
           = link_to t('.edit'), edit_user_path(u), class: 'btn btn-outline-warning'
-          = link_to t('.delete'), user_path(u), method: :delete, class: 'btn btn-outline-danger'
--# <h1>Users list</h1>
--#
--# <div>
--#   <%= link_to "Create user", new_user_path, class: 'btn btn-outline-success btn-size' %>
--# </div>
--#
--# <table class="table table-striped users-list">
--#   <thead>
--#     <tr class="info">
--#       <th>ID</th>
--#       <th>Name</th>
--#       <th>Last name</th>
--#       <th>Email</th>
--#       <th>Role</th>
--#       <th>Action</th>
--#     </tr>
--#   </thead>
--#   <tbody>
--#   <% @users.each do |u| %>
--#     <tr>
--#       <td><%= u.id %></td>
--#       <td><%= u.name %></td>
--#       <td><%= u.surname %></td>
--#       <td><%= u.email %></td>
--#       <td><%= show_user_role(u) %></td>
--#       <td>
--#         <%= link_to "View", user_path(u), class: 'btn btn-outline-info btn-size' %>
--#         <%= link_to "Edit", edit_user_path(u), class: 'btn btn-outline-warning btn-size' %>
--#         <%= link_to "Delete", user_path(u), method: :delete, class: 'btn btn-outline-danger btn-size' %>
--#       </td>
--#     </tr>
--#   <% end %>
--#   </tbody>
--# </table>
+          = link_to t('.delete'), user_path(u), method: :delete, data: { confirm: 'Are You Sure?' }, class: 'btn btn-outline-danger'

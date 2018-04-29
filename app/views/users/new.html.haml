@@ -9,7 +9,6 @@
         = f.input :role, label: t('.role') do
           %br/
           = f.select :roles, Role.all.map { |r| r.name }, include_blank: true, addClassName: "sdf"
-        -# = f.association :roles, as: :radio_buttons, label: t('.role'), include_blank: true
         = f.label :password, required: true
         %em= t('devise.shared.minimum_password_length', count: @minimum_password_length)
         = f.input :password, autocomplete: 'off', input_html: { minlength: 6 }, label: false

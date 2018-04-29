@@ -10,15 +10,17 @@ en:
       role: Role
     show:
       back: Back
+      user_info: User Info
     edit:
       update: Update
+      edit_user: Edit User
     index:
       users_list: Users list
       action: Action
       view: View
       edit: Edit
       delete: Delete
-    update:
+    create:
       successfully_create: Created new User!
       didn_t_create: User creation error!
     update:

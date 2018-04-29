@@ -10,8 +10,10 @@ uk:
       role: Роль
     show:
       back: Назад
+      user_info: Інформація про користувача
     edit:
       update: Оновити дані
+      edit_user: Редагуванння користувача
     index:
       users_list: Список користувачів
       action: Дія

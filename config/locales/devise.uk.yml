@@ -132,7 +132,7 @@ uk:
         one: "(Мінімум %{count} символ)"
         few: "(Мінімум %{count} символи)"
         many: "(Мінімум %{count} символів)"
-        other: "(Мінімум %{count} символів)"  
+        other: "(Мінімум %{count} символів)"
     unlocks:
       new:
         resend_unlock_instructions: "Повторно надіслати інструкції з розблокування"

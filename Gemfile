@@ -8,6 +8,7 @@ end
 gem 'bootstrap', '~> 4.0.0'
 gem 'cancancan', '~> 2.0'
 gem 'coffee-rails', '~> 4.2'
+gem 'data-confirm-modal'
 gem 'devise', '~> 4.4.3'
 gem 'devise-i18n'
 gem 'dotenv-rails'
