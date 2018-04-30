@@ -5,10 +5,10 @@
       = simple_form_for(@user, url: 'new', defaults: { input_html: { class: 'form-control' } } ) do |f|
         = f.input :email, label: 'Email', autofocus: true, autocomplete: 'email', placeholder: 'example@mail.com', required: true
         = f.input :name, label: t('.name')
-        = f.input :surname, label: t('.surname'), input_html: { minlength: 3, maxlength: 30 }
-        = f.input :role, label: t('.role') do
+        = f.input :surname, label: t('.surname'), input_html: { minlength: 3, maxlength: 30, class: 'foo' }
+        = f.input :role, label: t('.role'), input_html: { class: 'foo' } do
           %br/
-          = f.select :roles, Role.all.map { |r| r.name }, include_blank: true, addClassName: "sdf"
+          = f.select :roles, all_roles, include_blank: true, className: 'tr'
         = f.label :password, required: true
         %em= t('devise.shared.minimum_password_length', count: @minimum_password_length)
         = f.input :password, autocomplete: 'off', input_html: { minlength: 6 }, label: false

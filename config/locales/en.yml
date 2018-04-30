@@ -14,18 +14,27 @@ en:
     edit:
       update: Update
       edit_user: Edit User
+      delete: Delete user
     index:
       users_list: Users list
       action: Action
       view: View
       edit: Edit
       delete: Delete
+      confirm_message: Are You sure, you want to delete user
+      deleting_user: Deleting User
+      submit: Submit
+      cancel: Cancel
+      confirmation: Confirmation
     create:
-      successfully_create: Created new User!
+      successfully_create: Created new User
       didn_t_create: User creation error!
     update:
       successfully_update: Updated successfully!
       didn_t_update: Error occured while updating!
+    destroy:
+      successfully_deleted: User successfully deleted!
+      didn_t_deleted: User deleting error!
   layouts:
     application:
       title: ProDobro
@@ -38,6 +47,7 @@ en:
       about_us: ABOUT US
       campaigns: CAMPAIGNS
       contacts: CONTACTS
+      users: USERS
       links: LINKS
       address: ADDRESS
       our_goal: OUR GOAL
@@ -89,6 +99,7 @@ en:
       edit: Edit
       delete: Delete
       are_you_sure?: Are you sure?
+      deleting_news: Deleting news
     show:
       posted_at: Posted at
       description: Description

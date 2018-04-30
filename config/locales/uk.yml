@@ -14,18 +14,27 @@ uk:
     edit:
       update: Оновити дані
       edit_user: Редагуванння користувача
+      delete: Видалити користувача
     index:
       users_list: Список користувачів
       action: Дія
       view: Показати
       edit: Редагувати
       delete: Видалити
+      confirm_message: Ви впевнені, що хочете видалити користувача
+      deleting_user: Видалення користувача
+      submit: Видалити
+      cancel: Відмінити
+      confirmation: Перевірено
     create:
-      successfully_create: Створено нового користувача!
+      successfully_create: Створено нового користувача
       didn_t_create: Виникла помилка при створенні нового користувача!
     update:
       successfully_update: Дані користувача успішно оновлено!
       didn_t_update: При оновленні даних виникла помилка!
+    destroy:
+      successfully_deleted: Користувача видалено!
+      didn_t_deleted: Сталася помилка підчас видалення користувача!
   layouts:
     application:
       title: ПроДобро
@@ -38,6 +47,7 @@ uk:
       about_us: ПРО НАС
       campaigns: КАМПАНІЇ
       contacts: КОНТАКТИ
+      users: КОРИСТУВАЧІ
       links: ЛІНКИ
       address: АДРЕСА
       our_goal: НАША ЦІЛЬ
@@ -96,6 +106,7 @@ uk:
       edit: Змінити
       delete: Видалити
       are_you_sure?: Ви впевнені?
+      deleting_news: Видалення новини
     show:
       posted_at: Опубліковано
       description: Опис

@@ -20,6 +20,11 @@
   = show_user_role(@user)
 .actions
   = link_to t('users.index.edit'), edit_user_path(@user), class: 'btn btn-outline-warning'
-  = link_to t('users.index.delete'), user_path(@user), method: :delete, class: 'btn btn-outline-danger'
+  = link_to t('users.index.delete'), user_path(@user), method: :delete,
+                                          data: { confirm: t('users.index.confirm_message') + " <b>\"#{@user.email}\"</b> ?",
+                                                    title: t('users.index.deleting_user'),
+                                                   commit: t('users.index.submit'),
+                                                   cancel: t('users.index.cancel')},
+                                          class: 'btn btn-outline-danger'
 %hr/
 = link_to t('.back'), :back, class: 'btn btn-outline-secondary'

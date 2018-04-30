@@ -26,4 +26,4 @@
           = link_to t('.read'), campaign_path(campaign), class: 'btn btn-outline-info btn-campaigns'
           = link_to t('.edit'), edit_campaign_path(campaign), class: 'btn btn-outline-info btn-campaigns'
           = link_to t('.delete'), campaign_path(campaign), method: :delete,
-            data: { confirm: t('.are_you_sure') }, class: 'btn btn-outline-info btn-campaigns'
+            data: { confirm: t('.are_you_sure'), title: t('.deleting_compaign') }, class: 'btn btn-outline-info btn-campaigns'

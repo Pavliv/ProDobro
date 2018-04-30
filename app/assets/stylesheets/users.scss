@@ -19,3 +19,30 @@ abbr[title] {
   padding: 0.2rem;
   vertical-align: middle;
 }
+span.green, span.red{
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  margin: auto 20px;
+  display: block;
+}
+span.red{
+  background-color: #dc3545;
+}
+span.green{
+  background-color: #28a745;
+}
+#user_roles{
+   height: calc(2.25rem + 2px);
+   display: block;
+   width: 100%;
+   padding: 0.375rem 0.75rem;
+   font-size: 1rem;
+   line-height: 1.5;
+   color: #495057;
+   background-color: #fff;
+   background-clip: padding-box;
+   border: 1px solid #ced4da;
+   border-radius: 0.25rem;
+   transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}

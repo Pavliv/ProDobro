@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::Base
+  include Pundit
   protect_from_forgery with: :exception
   before_action :set_locale
   before_action :authenticate_user!
+
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   private
 
@@ -17,5 +20,9 @@ class ApplicationController < ActionController::Base
     respond_to do |format|
       format.html { render file: "#{Rails.root}/public/404", layout: false, status: :not_found }
     end
+  end
+
+  def user_not_authorized
+    redirect_to(request.referrer || root_path)
   end
 end

@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     devise_for :users, controllers: { registrations: 'users/registrations' }
     resources :campaigns, :news
     resources :users, exept: :create
-    root 'users#index'
+    root 'news#index'
     post 'users/new', to: 'users#create'
     # patch '/users/:id/edit', to: 'users#update'
   end

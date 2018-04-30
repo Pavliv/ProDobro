@@ -10,7 +10,7 @@
           .body
             %span.news_description= news.description
             = link_to t('.edit'), edit_news_path(news), class: 'btn btn-outline-info index_news_btns'
-            = link_to t('.delete'), news, method: :delete, data: { confirm: t('.are_you_sure?') }, class: 'btn btn-outline-info index_news_btns'
+            = link_to t('.delete'), news, method: :delete, data: { confirm: t('.are_you_sure?'), title: t('.deleting_news') }, class: 'btn btn-outline-info index_news_btns'
             %span.span_news= l news.created_at, format: :short
 .paginate
   = paginate @news

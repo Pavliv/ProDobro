@@ -191,6 +191,8 @@ GEM
       premailer (~> 1.7, >= 1.7.9)
     public_suffix (3.0.2)
     puma (3.11.3)
+    pundit (1.1.0)
+      activesupport (>= 3.0.0)
     rack (2.0.4)
     rack-test (1.0.0)
       rack (>= 1.0, < 3)
@@ -373,6 +375,7 @@ DEPENDENCIES
   pg (~> 1.0.0)
   premailer-rails
   puma (~> 3.7)
+  pundit
   rails (~> 5.1.5)
   rails-controller-testing
   rails-i18n (~> 5.1)
