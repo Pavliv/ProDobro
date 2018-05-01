@@ -11,7 +11,11 @@ RSpec.describe CommentsController, type: :controller do
     describe 'POST #create' do
       context 'when comment is valid' do
         before do
-          post :create, params: { news_id: news.id, comment: attributes_for(:news_valid_comment) }
+          post :create, params: {
+            locale: 'en',
+            news_id: news.id,
+            comment: attributes_for(:news_valid_comment)
+          }
         end
 
         it 'creates a comment' do
@@ -25,7 +29,11 @@ RSpec.describe CommentsController, type: :controller do
 
       context 'when comment is invalid' do
         it 'redirects on news show page' do
-          post :create, params: { news_id: news.id, comment: attributes_for(:news_invalid_comment) }
+          post :create, params: {
+            locale: 'en',
+            news_id: news.id,
+            comment: attributes_for(:news_invalid_comment)
+          }
           is_expected.to redirect_to(news_path(news))
         end
       end
@@ -36,6 +44,7 @@ RSpec.describe CommentsController, type: :controller do
         it 'redirects to sign_in page' do
           sign_out user
           get :edit, params: {
+            locale: 'en',
             id: comment.id,
             news_id: news.id,
             comment: attributes_for(:news_invalid_comment)
@@ -46,7 +55,7 @@ RSpec.describe CommentsController, type: :controller do
 
       context 'when comment not found' do
         it 'renders page 404' do
-          get :edit, params: { id: 0, news_id: news.id }
+          get :edit, params: { locale: 'en', id: 0, news_id: news.id }
           is_expected.to render_template(file: "#{Rails.root}/public/404.html")
         end
       end
@@ -59,6 +68,7 @@ RSpec.describe CommentsController, type: :controller do
       context 'when comment is valid' do
         before do
           put :update, params: {
+            locale: 'en',
             id: comment.id,
             news_id: news.id,
             comment: attributes_for(:news_valid_comment, body: valid_data)
@@ -77,6 +87,7 @@ RSpec.describe CommentsController, type: :controller do
       context 'when campaing is invalid' do
         it 'can not update campaign' do
           put :update, params: {
+            locale: 'en',
             id: comment.id,
             news_id: news.id,
             comment: attributes_for(:news_valid_comment, body: invalid_data)
@@ -89,7 +100,7 @@ RSpec.describe CommentsController, type: :controller do
     describe 'DELETE #destroy' do
       context 'when campaign is valid' do
         before do
-          delete :destroy, params: { id: comment.id, news_id: news.id }
+          delete :destroy, params: { locale: 'en', id: comment.id, news_id: news.id }
         end
 
         it 'deletes the campaign' do
@@ -103,7 +114,7 @@ RSpec.describe CommentsController, type: :controller do
 
       context 'when comment not found' do
         it 'renders page 404' do
-          delete :destroy, params: { id: 0, news_id: news.id }
+          delete :destroy, params: { locale: 'en', id: 0, news_id: news.id }
           is_expected.to render_template(file: "#{Rails.root}/public/404.html")
         end
       end
@@ -118,6 +129,7 @@ RSpec.describe CommentsController, type: :controller do
       context 'when comment is valid' do
         before do
           post :create, params: {
+            locale: 'en',
             campaign_id: campaign.id,
             comment: attributes_for(:campaign_valid_comment)
           }
@@ -135,6 +147,7 @@ RSpec.describe CommentsController, type: :controller do
       context 'when comment is invalid' do
         it 'redirects on campaign show page' do
           post :create, params: {
+            locale: 'en',
             campaign_id: campaign.id,
             comment: attributes_for(:campaign_invalid_comment)
           }
@@ -148,6 +161,7 @@ RSpec.describe CommentsController, type: :controller do
         it 'redirects to sign_in page' do
           sign_out user
           get :edit, params: {
+            locale: 'en',
             id: comment.id,
             campaign_id: campaign.id,
             comment: attributes_for(:campaign_invalid_comment)
@@ -158,7 +172,7 @@ RSpec.describe CommentsController, type: :controller do
 
       context 'when comment not found' do
         it 'renders page 404' do
-          get :edit, params: { id: 0, campaign_id: campaign.id }
+          get :edit, params: { locale: 'en', id: 0, campaign_id: campaign.id }
           is_expected.to render_template(file: "#{Rails.root}/public/404.html")
         end
       end
@@ -171,6 +185,7 @@ RSpec.describe CommentsController, type: :controller do
       context 'when comment is valid' do
         before do
           put :update, params: {
+            locale: 'en',
             id: comment.id,
             campaign_id: campaign.id,
             comment: attributes_for(:campaign_valid_comment, body: valid_data)
@@ -189,6 +204,7 @@ RSpec.describe CommentsController, type: :controller do
       context 'when campaing is invalid' do
         it 'can not update campaign' do
           put :update, params: {
+            locale: 'en',
             id: comment.id,
             campaign_id: campaign.id,
             comment: attributes_for(:campaign_valid_comment, body: invalid_data)
@@ -201,7 +217,7 @@ RSpec.describe CommentsController, type: :controller do
     describe 'DELETE #destroy' do
       context 'when campaign is valid' do
         before do
-          delete :destroy, params: { id: comment.id, campaign_id: campaign.id }
+          delete :destroy, params: { locale: 'en', id: comment.id, campaign_id: campaign.id }
         end
 
         it 'deletes the campaign' do
@@ -215,7 +231,7 @@ RSpec.describe CommentsController, type: :controller do
 
       context 'when comment not found' do
         it 'renders page 404' do
-          delete :destroy, params: { id: 0, campaign_id: campaign.id }
+          delete :destroy, params: { locale: 'en', id: 0, campaign_id: campaign.id }
           is_expected.to render_template(file: "#{Rails.root}/public/404.html")
         end
       end

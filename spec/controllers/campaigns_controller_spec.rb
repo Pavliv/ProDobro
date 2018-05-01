@@ -12,7 +12,7 @@ RSpec.describe CampaignsController, type: :controller do
 
   describe 'GET #show' do
     it 'renders show template' do
-      get :show, params: { id: campaign.id }
+      get :show, params: { locale: 'en', id: campaign.id }
       is_expected.to render_template(:show)
     end
 

@@ -37,6 +37,11 @@ class CommentsController < ApplicationController
 
   private
 
+  def load_commentable
+    resource, id = request.path.split('/')[2, 3]
+    @commentable = resource.singularize.classify.constantize.find(id)
+  end
+
   def load_comment
     @comment = @commentable.comments.find_by(id: params[:id]) || render_404
   end

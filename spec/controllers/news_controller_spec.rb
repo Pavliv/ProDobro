@@ -19,7 +19,7 @@ RSpec.describe NewsController, type: :controller do
 
   describe 'GET #show' do
     it 'renders show template' do
-      get :show, params: { id: news.id }
+      get :show, params: { locale: 'en', id: news.id }
       is_expected.to render_template(:show)
     end
 

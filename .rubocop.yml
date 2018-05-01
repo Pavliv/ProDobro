@@ -19,7 +19,6 @@ Metrics/BlockLength:
 Metrics/AbcSize:
   Exclude:
     - 'db/migrate/*'
-    - 'app/controllers/application_controller.rb'
 Metrics/MethodLength:
   Exclude:
     - 'db/migrate/*'

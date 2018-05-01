@@ -1,12 +1,14 @@
 class NewsController < ApplicationController
   before_action :load_news, only: %i[show edit update destroy]
   before_action :load_commentable, only: %i[show]
-
   def index
     @news = News.order(:created_at).page(params[:page])
   end
 
-  def show; end
+  def show
+    @comments = @commentable.comments
+    @comment = Comment.new
+  end
 
   def new
     @news = News.new
@@ -45,6 +47,11 @@ class NewsController < ApplicationController
   end
 
   private
+
+  def load_commentable
+    resource, id = request.path.split('/')[2, 3]
+    @commentable = resource.singularize.classify.constantize.find(id)
+  end
 
   def load_news
     @news = News.find_by(id: params[:id]) || render_404
